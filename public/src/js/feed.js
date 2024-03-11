@@ -120,9 +120,7 @@ function createCard(data) {
 
   sharedMomentsArea.appendChild(cardWrapper);
 
-  // Add a click event listener to the card button
   card.addEventListener('click', function () {
-    // Encode data values before constructing the URL
     const idParam = encodeURIComponent(data.id)
     const locationParam = encodeURIComponent(data.location);
     const imageParam = encodeURIComponent(data.image);
@@ -141,11 +139,7 @@ function createCard(data) {
     };
     localStorage.setItem(idParam, JSON.stringify(dataObject));
 
-    //   // Construct the URL with encoded data values
     const url = `detail.html?id=${idParam}`;
-    //   // const url = `detail.html?location=${locationParam}&image=${imageParam}&description=${descriptionParam}`;
-
-    //   // Open the corresponding HTML page in a new tab
     window.location.href = url;
   });
 }
